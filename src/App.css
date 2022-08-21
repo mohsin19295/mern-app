@@ -1,0 +1,43 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+form{
+  display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #131313;
+    padding: 1rem;
+    width: 40%;
+}
+
+form > *{
+  height: 2rem;
+}
+
+form input, button{
+  outline: none;
+  padding: 0 10px;
+}
+
+.display-data{ 
+  width:100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+table{
+  width: 80%;
+  background-color: red; 
+}
