@@ -45,7 +45,7 @@ function App() {
   //! To check all data in /list route
   useEffect(() => {
     axios
-      .get("https://mohsin-mern-app.herokuapp.com//list")
+      .get("https://mohsin-mern-app.herokuapp.com/list")
       .then((res) => {
         setList(res.data);
       })
@@ -83,7 +83,7 @@ function App() {
     const newAge = prompt("Enter new age:");
     const newCity = prompt("Enter new city:");
     axios
-      .put("https://mohsin-mern-app.herokuapp.com//update", { newName, newAge, newCity, id }) // we are updating newAge and id in the backend so put only these two
+      .put("https://mohsin-mern-app.herokuapp.com/update", { newName, newAge, newCity, id }) // we are updating newAge and id in the backend so put only these two
       .then(() =>
         setList(
           list.map((e) =>
@@ -103,7 +103,7 @@ function App() {
 
   const deleteField = (id) => {
     axios
-      .delete(`https://mohsin-mern-app.herokuapp.com//delete/${id}`)
+      .delete(`https://mohsin-mern-app.herokuapp.com/delete/${id}`)
       .then(() => setList(list.filter((e) => e._id !== id)));
   };
 
