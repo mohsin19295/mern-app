@@ -32,7 +32,7 @@ function App() {
   const handleClick = (e) => {
     e.preventDefault();
     axios
-      .post("https://mohsin-mern-app.herokuapp.com/", state)
+      .post("https://localhost:3001/", state)
       .then(() => {
         setState({ name: "", age: "", city: "" });
         setList([...list, { name, age, city }]); // Avoiding to create funtion getData and useEffect seperately then call here for displaying data at the same time
@@ -45,7 +45,7 @@ function App() {
   //! To check all data in /list route
   useEffect(() => {
     axios
-      .get("https://mohsin-mern-app.herokuapp.com/list")
+      .get("https://localhost:3001/list")
       .then((res) => {
         setList(res.data);
       })
@@ -83,7 +83,7 @@ function App() {
     const newAge = prompt("Enter new age:");
     const newCity = prompt("Enter new city:");
     axios
-      .put("https://mohsin-mern-app.herokuapp.com/update", { newName, newAge, newCity, id }) // we are updating newAge and id in the backend so put only these two
+      .put("https://localhost:3001/update", { newName, newAge, newCity, id }) // we are updating newAge and id in the backend so put only these two
       .then(() =>
         setList(
           list.map((e) =>
@@ -103,7 +103,7 @@ function App() {
 
   const deleteField = (id) => {
     axios
-      .delete(`https://mohsin-mern-app.herokuapp.com/delete/${id}`)
+      .delete(`https://localhost:3001/delete/${id}`)
       .then(() => setList(list.filter((e) => e._id !== id)));
   };
 
